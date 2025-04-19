@@ -10,7 +10,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes
@@ -21,7 +25,11 @@ jobs:
           path: |
             main.ipynb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             README.md  
+=======
+            README.md
+>>>>>>> Stashed changes
 =======
             README.md
 >>>>>>> Stashed changes
