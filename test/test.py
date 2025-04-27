@@ -29,7 +29,7 @@ def test_calcular_media():
     assert calcular_media("Matematica#Portugues#Historia", "10#9#8", "Matematica") == 10.0
     assert calcular_media("Matematica#Portugues#Historia", "0#0#0", "Historia") == 0.0
     assert calcular_media("Matematica#Portugues#Historia#Matematica#Matematica", "5#10#10#5#5", "Matematica") == 5.0
-    assert calcular_media("Historia#Historia#Historia#Historia", "8#6#2#4", "Historia") == 5.0
+    assert calcular_media("Historia#Historia#Historia#Historia", "8#6#2#4") == 5.0
     assert calcular_media("Matematica#Portugues#Historia", "10#0#2", "Portugues") == 0.0
 
 
