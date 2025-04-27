@@ -1,6 +1,11 @@
 name: Discord
 on:
-  - push:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   discord:
