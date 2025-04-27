@@ -1,5 +1,5 @@
 import pytest
-from src.funcao_util import remove_acentos
+from src.funcao_util import remove_acentos, busca_maior_nota, busca_media_todas_notas
 
 def test_remove_acentos_lowercase():
     assert remove_acentos("áéíóúãõâêîôû") == "aeiouaoaeiou"
@@ -16,3 +16,19 @@ def test_remove_acentos_empty_string():
 def test_remove_acentos_sem_acentos():
     assert remove_acentos("aeiou") == "aeiou"
     assert remove_acentos("AEIOU") == "AEIOU"
+
+def test_busca_maior_nota():
+    assert busca_maior_nota(["10", "9", "8"]) == 10.0
+    assert busca_maior_nota(["5", "6", "7"]) == 7.0
+    assert busca_maior_nota(["0", "0", "0"]) == 0.0
+    assert busca_maior_nota(["10", "10", "10"]) == 10.0
+    assert busca_maior_nota(["10", "9", "8", "7"]) == 10.0
+    assert busca_maior_nota(["5", "6", "7", "8"]) == 8.0
+
+def test_busca_media_todas_notas():
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["10", "9", "8"], ["Matematica"]) == 10.0
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["5", "6", "7"], ["Portugues"]) == 6.0
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["0", "0", "0"], ["Historia"]) == 0.0
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["10", "10", "10"], ["Matematica"]) == 10.0
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["10", "9", "8"], ["Historia"]) == 8.0
+    assert busca_media_todas_notas(["Matematica", "Portugues", "Historia"], ["5", "6", "7"], ["Matematica"]) == 5.0
