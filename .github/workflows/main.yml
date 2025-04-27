@@ -27,10 +27,8 @@ jobs:
         with:
           name: projetozipado.zip
           path: |
-            main.ipynb
+            src/main.ipynb
             README.md
-
-            name: Discord Webhook
 
   testes:
     steps:
