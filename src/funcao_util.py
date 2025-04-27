@@ -33,4 +33,4 @@ def busca_media_todas_notas(materias_str, notas_str, filtro=None):
         return notas_por_materia[filtro]
     
     # Caso contrário, calcular a média geral
-    return sum(notas) / len(notas)
+    return float(sum(notas) / len(notas))
