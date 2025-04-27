@@ -13,11 +13,11 @@ def remove_acentos(texto):
 
 def busca_maior_nota(nota):
     
-    if nota is None or len(nota) == 0:
-        return 'NA'
-
-    lista_nota = [x for x in nota.split('#')]
-    return max(float(lista_nota))
+    numeros = list(map(int, nota.split("#")))
+    if len(numeros) == 0:
+        return 0
+    
+    return max(numeros)
 
 
 def busca_media_todas_notas(materia,nota,filtro):
@@ -26,11 +26,12 @@ def busca_media_todas_notas(materia,nota,filtro):
         return 0
     
     lista_materia = [x for x in materia.split('#')]
+    lista_nota = [x for x in nota.split('#')]
 
     vlr_total = 0
     qtd_total = 0
-    for x in lista_materia:
+    for x,i in enumerate(lista_materia):
         if x in (filtro):
-            vlr_total += float(nota[lista_materia.index(x)])
+            vlr_total += float(lista_nota[i])
             qtd_total += 1
-    return vlr_total / qtd_total if (qtd_total > 0) & (vlr_total > 0) else 0
+    return vlr_total / qtd_total if ((qtd_total > 0) & (vlr_total > 0)) else 0
