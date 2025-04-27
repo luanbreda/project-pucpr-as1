@@ -11,16 +11,11 @@ def remove_acentos(texto):
         if unicodedata.category(c) != 'Mn'
     )
 
-def busca_maior_nota(nota):
-    
-    if nota is None or len(nota) == 0:
-        return 'NA'
+def busca_maior_nota(string):
+    numeros = list(map(int, string.split("#")))
+    return max(numeros)
 
-    lista_nota = [x for x in nota.split('#')]
-    return max(float(lista_nota))
-
-
-def busca_media_todas_notas(materias_str, notas_str, filtro=None):
+def calcular_media(materias_str, notas_str, filtro=None):
     materias = materias_str.split("#")
     notas = list(map(float, notas_str.split("#")))
 
@@ -33,4 +28,4 @@ def busca_media_todas_notas(materias_str, notas_str, filtro=None):
     # Calcular a média sem arredondar automaticamente para cima
     media = sum(notas) / len(notas)
     
-    return round(media, 2)
+    return round(media, 2)  # Arredonda para duas casas decimais
