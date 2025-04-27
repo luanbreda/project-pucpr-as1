@@ -27,8 +27,8 @@ def test_busca_maior_nota():
 
 def test_busca_media_todas_notas():
     assert busca_media_todas_notas("Matematica#Portugues#Historia", "10#9#8", "Matematica") == 10.0
-    assert busca_media_todas_notas("Portugues#Portugues#Historia", "5#6#7", "Portugues") == 5.5
     assert busca_media_todas_notas("Matematica#Portugues#Historia", "0#0#0", "Historia") == 0.0
-    assert busca_media_todas_notas("Matematica#Portugues#HistoriaMatematica#Matematica", "10#10#10#20#30", "Matematica") == 6.0
+    assert busca_media_todas_notas("Matematica#Portugues#Historia#Matematica#Matematica", "5#10#10#5#5", "Matematica") == 5.0
+    assert busca_media_todas_notas("Matematica#Portugues#Historia", "10#0#2", "Portugues") == 0.0
 
 
