@@ -23,7 +23,7 @@ def busca_maior_nota(nota):
 def busca_media_todas_notas(materia,nota,filtro):
     
     if materia is None or len(materia) == 0:
-        return 'NA'
+        return 0
     
     lista_materia = [x for x in materia.split('#')]
 
@@ -33,4 +33,4 @@ def busca_media_todas_notas(materia,nota,filtro):
         if x in (filtro):
             vlr_total += float(nota[lista_materia.index(x)])
             qtd_total += 1
-    return vlr_total / qtd_total if qtd_total > 0 else 'NA'
+    return vlr_total / qtd_total if (qtd_total > 0) & (vlr_total > 0) else 0
