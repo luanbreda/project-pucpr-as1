@@ -20,18 +20,17 @@ def busca_maior_nota(nota):
     return max(numeros)
 
 
-def busca_media_todas_notas(materia,nota,filtro):
-    
-    if materia is None or len(materia) == 0:
-        return 0
-    
-    lista_materia = [x for x in materia.split('#')]
-    lista_nota = [x for x in nota.split('#')]
+def busca_media_todas_notas(materias_str, notas_str, filtro=None):
+    # Dividir as strings em listas
+    materias = materias_str.split("#")
+    notas = list(map(float, notas_str.split("#")))
 
-    vlr_total = 0
-    qtd_total = 0
-    for x,i in enumerate(lista_materia):
-        if x in (filtro):
-            vlr_total += float(lista_nota[i])
-            qtd_total += 1
-    return vlr_total / qtd_total if ((qtd_total > 0) & (vlr_total > 0)) else 0
+    # Criar um dicionário associando matérias às notas
+    notas_por_materia = dict(zip(materias, notas))
+
+    # Se um filtro for aplicado, calcular apenas para a matéria específica
+    if filtro and filtro in notas_por_materia:
+        return notas_por_materia[filtro]
+    
+    # Caso contrário, calcular a média geral
+    return sum(notas) / len(notas)
